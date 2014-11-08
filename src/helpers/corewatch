@@ -1,0 +1,80 @@
+#!/usr/bin/env node
+
+var path = require('path')
+  , fs = require('fs-extra')
+  , jade = require('jade')
+  , coffee = require('coffee-script')
+  , ugjs = require('uglify-js');
+
+fs.watch(path.join(__dirname, '/../core/'), function (event, filename) {
+  if(filename && filename.indexOf('_tmp') == -1 && filename != 'untitled folder' && (event == 'change' || event == 'rename')) {
+    var inputfile = 'src/core/' + filename
+      , outputpath = 'deploy/' + filename;
+
+    if( filename == 'index.jade' ){
+      fs.readFile(inputfile, function read(err, data) {
+        if (err) {
+          console.log(err);
+        }
+        var compliled = jade.compile(data)();
+        fs.writeFile(outputpath.replace('jade','html'), compliled, function write(err){
+          if (err) {
+            console.log(err);
+          } else {
+            console.log(inputfile + ' > ' + outputpath);
+          }
+        });
+      });
+    } else if ( filename == 'package.coffee' ){
+      fs.readFile(inputfile, 'utf8', function read(err, data) {
+        if (err) {
+          console.log(err);
+        }
+        var compiled = coffee.compile('return {'+data+'}');
+        fs.writeFile(outputpath.replace('coffee','json'), JSON.stringify(eval(compiled), null, 2), function write(err){
+          if (err) {
+            console.log(err);
+          } else {
+            console.log(inputfile + ' > ' + outputpath);
+          }
+        });
+      });
+    } else if ( filename == 'app-encrypt.coffee' ){
+      fs.readFile(inputfile, 'utf8', function read(err, data) {
+        if (err) {
+          console.log(err);
+        }
+        
+        var encrypted_code = coffee.compile(data, {
+            bare: true
+          })
+          , encoutputpath = 'src/core/' + filename.replace('coffee','js');
+
+        encrypted_code = ugjs.minify(encrypted_code, {
+          mangle: true
+          , fromString: true
+          , compress: true
+        }).code;
+        
+        fs.writeFile(encoutputpath, encrypted_code, function write(err){
+          if (err) {
+            console.log(err);
+          } else {
+            console.log(inputfile + ' > ' + encoutputpath);
+            var sys = require('sys');
+            var exec = require('child_process').exec;
+            exec('./src/node-webkit-v0.5.1-osx-ia32/nwsnapshot --extra_code ' + encoutputpath + ' ' + outputpath.replace('app-encrypt.coffee', 'snapshot.bin') + '', function (error, stdout, stderr) {
+              if (error !== null) {
+                console.log('exec error: ' + error);
+              } else {
+                console.log('compile stdout: ' + stdout);
+                console.log('compile stderr: ' + stderr);
+                exec('touch src/coffee/*');
+              }
+            });
+          }
+        });
+      });
+    }
+  }
+});

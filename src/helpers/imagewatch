@@ -1,0 +1,22 @@
+#!/usr/bin/env node
+
+var path = require('path')
+  , fs = require('fs-extra');
+
+fs.watch(path.join(__dirname, '/../images/'), function (event, filename) {
+  if(filename && filename.indexOf('_tmp') == -1 && (event == 'change' || event == 'rename')) {
+    var imagefile = 'src/images/'+filename
+      , outputpath = 'deploy/app/css/images/' + filename;
+
+    fs.copy(imagefile, outputpath, function(err){
+      if (err) {
+        console.error(err);
+      }
+      else {
+        console.log(imagefile + ' > ' + outputpath);
+      }
+    });
+  } else {
+    console.log('Didn\'t process: ' + filename);
+  }
+});

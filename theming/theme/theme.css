@@ -1,0 +1,23 @@
+#body-827f574dfb07ec5fa43bd97061a5935b #article section#main-section{background-color:#189954;}
+#body-827f574dfb07ec5fa43bd97061a5935b #article section#main-section #forecast-section{background-color:#20c56c;}
+#body-827f574dfb07ec5fa43bd97061a5935b #article section#main-section #forecast-section .section-content #time #time-display{text-shadow:1px 1px 1px #0d542e}
+#body-827f574dfb07ec5fa43bd97061a5935b #article section#main-section #forecast-section .section-content #time #time-am,#body-827f574dfb07ec5fa43bd97061a5935b #article section#main-section #forecast-section .section-content #time #time-pm{color:#0d542e}
+#body-827f574dfb07ec5fa43bd97061a5935b #article section#main-section #forecast-section .section-content #date{color:#0d542e}
+#body-827f574dfb07ec5fa43bd97061a5935b #article section#main-section #forecast-section .section-content #todays-forecast #temp-num{text-shadow:1px 1px 1px #0d542e}
+#body-827f574dfb07ec5fa43bd97061a5935b #article section#main-section #forecast-section .section-content #todays-forecast #temp-high{color:#0d542e}
+#body-827f574dfb07ec5fa43bd97061a5935b #article section#main-section #forecast-section .section-content #todays-forecast #temp-low{color:#0d542e}
+#body-827f574dfb07ec5fa43bd97061a5935b #article section#main-section #forecast-section .section-content #week-forecast .weekday-forecast{border-right:1px solid #189954;color:#0d542e;}
+#body-827f574dfb07ec5fa43bd97061a5935b #article section#main-section #forecast-section .section-content #week-forecast .weekday-forecast .temp-dow{text-shadow:1px 1px 1px #0d542e}
+#body-827f574dfb07ec5fa43bd97061a5935b #article section#main-section #forecast-section .section-content #week-forecast .weekday-forecast.last{border:none}
+#body-827f574dfb07ec5fa43bd97061a5935b #article section#main-section #external-news-section{background-color:#1caf60;}
+#body-827f574dfb07ec5fa43bd97061a5935b #article section#main-section #external-news-section .section-content h3{background-image:url("section2-logo.png");background-repeat:no-repeat;width:320px;height:30px;text-indent:110%;white-space:nowrap;overflow:hidden}
+#body-827f574dfb07ec5fa43bd97061a5935b #article section#main-section #external-news-section .section-content #external-news-content .external-news-item{border-bottom:1px solid #189954;text-shadow:1px 1px 1px #0d542e}
+#body-827f574dfb07ec5fa43bd97061a5935b #article section#main-section #external-news-section .section-content .fade-overlay{background:-webkit-linear-gradient(rgba(28,175,96,0.9),rgba(28,175,96,0) 10%,rgba(28,175,96,0) 90%,rgba(28,175,96,0.9))}
+#body-827f574dfb07ec5fa43bd97061a5935b #article section#main-section #internal-news-section{background-color:#189954;}
+#body-827f574dfb07ec5fa43bd97061a5935b #article section#main-section #internal-news-section .section-content h3{background-image:url("section3a-logo.png");background-repeat:no-repeat;width:311px;height:35px;text-indent:110%;white-space:nowrap;overflow:hidden;margin:7px 0 0 0}
+#body-827f574dfb07ec5fa43bd97061a5935b #article section#main-section #internal-news-section .section-content #internal-news-content .internal-news-item{border-bottom:1px solid #16874b;text-shadow:1px 1px 1px #0d542e}
+#body-827f574dfb07ec5fa43bd97061a5935b #article section#main-section #internal-news-section .section-content .fade-overlay{background:-webkit-linear-gradient(rgba(24,153,84,0.9),rgba(24,153,84,0) 10%,rgba(24,153,84,0) 90%,rgba(24,153,84,0.9))}
+#body-827f574dfb07ec5fa43bd97061a5935b #article section#main-section #internal-alerts-section{background-color:#189954;}
+#body-827f574dfb07ec5fa43bd97061a5935b #article section#main-section #internal-alerts-section .section-content h3{background-image:url("section3b-logo.png");background-repeat:no-repeat;width:191px;height:32px;text-indent:110%;white-space:nowrap;overflow:hidden;margin:7px 0 0 0}
+#body-827f574dfb07ec5fa43bd97061a5935b #article section#main-section #internal-alerts-section .section-content #internal-alerts-content .internal-alerts-item{border-bottom:1px solid #16874b;text-shadow:1px 1px 1px #0d542e}
+#body-827f574dfb07ec5fa43bd97061a5935b #article section#main-section #internal-alerts-section .section-content .fade-overlay{background:-webkit-linear-gradient(rgba(24,153,84,0.9),rgba(24,153,84,0) 15%,rgba(24,153,84,0) 85%,rgba(24,153,84,0.9))}

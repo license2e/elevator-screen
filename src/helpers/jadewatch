@@ -1,0 +1,29 @@
+#!/usr/bin/env node
+
+var path = require('path')
+  , fs = require('fs')
+  , jade = require('jade');
+
+fs.watch(path.join(__dirname, '/../jade/'), function (event, filename) {
+  if(filename && filename.indexOf('jade') != -1 && (event == 'change' || event == 'rename')) {
+    var jadefile = './src/jade/'+filename
+      , outputpath = './deploy/app/tpl/' + filename.replace('jade', 'json');
+      
+    fs.readFile(jadefile, function read(err, data) {
+      if (err) {
+        console.log(err);
+      }
+      var tplhtml = jade.compile(data)()
+        , tplobj = {
+          tpl: tplhtml
+        };
+      fs.writeFile(outputpath, JSON.stringify(tplobj), function write(err){
+        if (err) {
+          console.log(err);
+        } else {
+          console.log(jadefile + ' > ' + outputpath);
+        }
+      });
+    });
+  }
+});

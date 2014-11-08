@@ -1,0 +1,20 @@
+#!/usr/bin/env node
+
+var path = require('path')
+  , fs = require('fs-extra');
+
+fs.watch(path.join(__dirname, '/../vendorjs/'), function (event, filename) {
+  if(filename && filename.indexOf('_tmp') == -1 && filename.indexOf('crdownload') == -1 && filename != 'untitled folder' && (event == 'change' || event == 'rename')) {
+    var inputfile = 'src/vendorjs/' + filename
+      , outputpath = 'deploy/app/js/' + filename;
+
+    fs.copy(inputfile, outputpath, function(err){
+      if (err) {
+        console.error(err);
+      }
+      else {
+        console.log(inputfile + ' > ' + outputpath);
+      }
+    });
+  }
+});

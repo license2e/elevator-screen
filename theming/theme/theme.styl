@@ -1,0 +1,116 @@
+// Main Variables
+main_bkg_color = #189954
+// Forecast Section Variables
+forecast_section_bkg_color = #20c56c
+forecast_section_color = #0d542e
+forecast_section_weekday_forecast_border_color = main_bkg_color
+// External Section Variables
+external_section_bkg_color = #1caf60
+external_section_logo = "section2-logo.png"
+external_section_logo_width = 320px
+external_section_logo_height = 30px
+external_section_item_border_bottom_color = main_bkg_color
+external_section_item_text_shadow_color = forecast_section_color
+external_section_fade_bkg_color_solid = rgba(28,175,96,0)
+external_section_fade_bkg_color_transparent = rgba(28,175,96,0.9)
+// Internal News Section Variables
+internal_news_section_bkg_color = main_bkg_color
+internal_news_section_logo = "section3a-logo.png"
+internal_news_section_logo_width = 311px
+internal_news_section_logo_height = 35px
+internal_news_section_item_border_bottom_color = #16874b
+internal_news_section_item_text_shadow_color = forecast_section_color
+internal_news_section_fade_bkg_color_solid = rgba(24,153,84,0)
+internal_news_section_fade_bkg_color_transparent = rgba(24,153,84,0.9)
+// Internal Alerts Section Variables
+internal_alerts_section_bkg_color = main_bkg_color
+internal_alerts_section_logo = "section3b-logo.png"
+internal_alerts_section_logo_width = 191px
+internal_alerts_section_logo_height = 32px
+internal_alerts_section_item_border_bottom_color = internal_news_section_item_border_bottom_color
+internal_alerts_section_item_text_shadow_color = internal_news_section_item_text_shadow_color
+internal_alerts_section_fade_bkg_color_solid = internal_news_section_fade_bkg_color_solid
+internal_alerts_section_fade_bkg_color_transparent = internal_news_section_fade_bkg_color_transparent
+// The CSS
+#body-827f574dfb07ec5fa43bd97061a5935b
+  #article
+    section#main-section
+      background-color main_bkg_color
+      #forecast-section
+        background-color forecast_section_bkg_color
+        .section-content
+          #time
+            #time-display
+              text-shadow 1px 1px 1px forecast_section_color
+            #time-am, #time-pm
+              color forecast_section_color
+          #date
+            color forecast_section_color
+          #todays-forecast
+            #temp-num
+              text-shadow 1px 1px 1px forecast_section_color
+            #temp-high
+              color forecast_section_color
+            #temp-low
+              color forecast_section_color
+          #week-forecast
+            .weekday-forecast
+              border-right 1px solid forecast_section_weekday_forecast_border_color
+              color forecast_section_color
+              .temp-dow
+                text-shadow 1px 1px 1px forecast_section_color
+              &.last
+                border none
+      #external-news-section
+        background-color external_section_bkg_color
+        .section-content
+          h3
+            background-image url(external_section_logo)
+            background-repeat no-repeat
+            width external_section_logo_width
+            height external_section_logo_height
+            text-indent 110%
+            white-space nowrap
+            overflow hidden
+          #external-news-content
+            .external-news-item
+              border-bottom 1px solid external_section_item_border_bottom_color
+              text-shadow 1px 1px 1px external_section_item_text_shadow_color
+          .fade-overlay
+            background -webkit-linear-gradient(external_section_fade_bkg_color_transparent,external_section_fade_bkg_color_solid 10%,external_section_fade_bkg_color_solid 90%,external_section_fade_bkg_color_transparent)
+      #internal-news-section
+        background-color internal_news_section_bkg_color
+        .section-content
+          h3
+            background-image url(internal_news_section_logo)
+            background-repeat no-repeat
+            width internal_news_section_logo_width
+            height internal_news_section_logo_height
+            text-indent 110%
+            white-space nowrap
+            overflow hidden
+            margin 7px 0 0 0
+          #internal-news-content
+            .internal-news-item
+              border-bottom 1px solid internal_news_section_item_border_bottom_color
+              text-shadow 1px 1px 1px internal_news_section_item_text_shadow_color
+          .fade-overlay
+            background -webkit-linear-gradient(internal_news_section_fade_bkg_color_transparent,internal_news_section_fade_bkg_color_solid 10%,internal_news_section_fade_bkg_color_solid 90%,internal_news_section_fade_bkg_color_transparent)
+      #internal-alerts-section
+        background-color internal_alerts_section_bkg_color
+        .section-content
+          h3
+            background-image url(internal_alerts_section_logo)
+            background-repeat no-repeat
+            width internal_alerts_section_logo_width
+            height internal_alerts_section_logo_height
+            text-indent 110%
+            white-space nowrap
+            overflow hidden
+            margin 7px 0 0 0
+          #internal-alerts-content
+            .internal-alerts-item
+              border-bottom 1px solid internal_alerts_section_item_border_bottom_color
+              text-shadow 1px 1px 1px internal_alerts_section_item_text_shadow_color
+          .fade-overlay
+            background -webkit-linear-gradient(internal_alerts_section_fade_bkg_color_transparent,internal_alerts_section_fade_bkg_color_solid 15%,internal_alerts_section_fade_bkg_color_solid 85%,internal_alerts_section_fade_bkg_color_transparent)

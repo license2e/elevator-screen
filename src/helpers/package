@@ -1,0 +1,13 @@
+#!/bin/bash
+
+echo ""
+echo ""
+
+cp src/archive/app.icns ElevatorScreen/ElevatorScreen.app/Contents/Resources/
+rm -rf ElevatorScreen/ElevatorScreen.app/Contents/Resources/app.nw
+cp -R deploy ElevatorScreen/ElevatorScreen.app/Contents/Resources/app.nw
+cd deploy && zip -r ../ElevatorScreen-Win/app.nw ./* -x \*.DS_Store
+
+echo "Done packaging the app for Mac & Windows.."
+echo ""
+echo ""

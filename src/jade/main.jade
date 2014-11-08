@@ -1,0 +1,56 @@
+mixin weekly_forecast(num,cls)
+  div(id="weekday-#{num}",class="weekday-forecast #{cls !== undefined ? cls : ''}")
+    .temp-low.centered
+      .temp-num
+      .temp-label low
+    canvas.temp-skycon.centered(id="weekday-skycon-#{num}", width="26", height="26")
+    .temp-high.centered
+      .temp-num
+      .temp-label high
+    .temp-dow
+
+section#main-section
+  #forecast-section
+    .section-content
+      #time
+        #time-display
+        #time-am am
+        #time-pm pm
+      #date
+      #todays-forecast
+        #temp-low
+          .temp-num
+          .temp-label low
+        canvas#temp-skycon(width="68", height="68")
+        #temp-num
+        #temp-high
+          .temp-num
+          .temp-label high
+      #week-forecast
+        mixin weekly_forecast(1,'first')
+        mixin weekly_forecast(2)
+        mixin weekly_forecast(3)
+        mixin weekly_forecast(4)
+        mixin weekly_forecast(5)
+        mixin weekly_forecast(6,'last')
+  
+  #external-news-section
+    .section-content
+      h3 External News
+      #external-news-content
+        .content
+        .fade-overlay
+
+  #internal-news-section
+    .section-content
+      h3 Internal News
+      #internal-news-content
+        .content
+        .fade-overlay
+
+  #internal-alerts-section    
+    .section-content
+      h3 Internal Alerts
+      #internal-alerts-content
+        .content
+        .fade-overlay

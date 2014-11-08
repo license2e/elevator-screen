@@ -1,0 +1,19 @@
+{
+  "name": "elevatorscreen-source",
+  "version": "0.1.0",
+  "description": "ElevatorScreen",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": "",
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "jade": "~0.30.0",
+    "stylus": "~0.32.1",
+    "uglify-js": "~2.3.0",
+    "coffee-script": "~1.6.2",
+    "fs-extra": "~0.6.0"
+  }
+}

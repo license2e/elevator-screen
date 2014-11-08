@@ -1,0 +1,37 @@
+doctype
+html
+  head
+    title ElevatorScreen
+    meta(charset='utf-8')
+  body(tabindex="0")
+    #app
+      article#article
+    aside#aside
+      #aside-content
+        a#aside-close(href="#aside-close")
+          i.icon-chevron-right
+        #controls
+          a#quit
+            i.icon-remove
+            span Quit
+          a#full 
+            i.icon-fullscreen
+            span Fullscreen
+          a#min 
+            i.icon-resize-small
+            span Minimize
+        #debug
+          a#inspect(href="#inspect") 
+            i.icon-file-text
+            i#inspect-icon.icon-screenshot
+            span Inspect
+          #debug-info
+          a#clear-settings(href="#clear-settings") 
+            i.icon-trash
+            span Clear Settings
+          #version
+            p v
+              span
+          #copyright
+            p &copy; #{(new Date()).getFullYear()} EON Media Group. All rights reserved.
+    script(src="app/js/app-setup.js", type="text/javascript")

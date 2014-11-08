@@ -1,0 +1,21 @@
+#!/usr/bin/env node
+
+var path = require('path');
+var fs = require('fs');
+
+fs.watch(path.join(__dirname, '/../cson/'), function (event, filename) {
+  if(filename && filename.indexOf('cson') != -1 && (event == 'change' || event == 'rename')) {
+    var sys = require('sys')
+      , exec = require('child_process').exec
+      , cmd = 'cson2json src/cson/'+filename+' > deploy/app/js/' + filename.replace('cson', 'json')
+      , child = null;
+      
+    child = exec(cmd, function (error, stdout, stderr) {
+      if (error !== null) {
+        console.log('cson2json exec error: ' + error);
+      } else {
+        console.log(cmd);
+      }
+    });
+  }
+});

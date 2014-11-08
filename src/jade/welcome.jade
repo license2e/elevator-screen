@@ -1,0 +1,17 @@
+section#welcome-section
+  .section-content
+    h1
+      img#logo(src="app/css/images/app-102-full.png", alt="ElevatorScreen")
+      #logo-bkg
+    #app-info
+      #app-loading
+        img(src="app/css/images/loading.gif", alt="Loading..")
+      #app-info-set
+        form#set-app-url(action="#app-url", method="post")
+          #app-token-container
+            label(for="app-token") App Token:
+            input#app-token(type="text", name="token", placeholder="Under Settings > App Token")
+          #app-url-container
+            label(for="app-url") App Url:
+            input#app-url(type="text", name="url", placeholder="http://")
+          button#app-submit(type="submit", name="submit") Go!
